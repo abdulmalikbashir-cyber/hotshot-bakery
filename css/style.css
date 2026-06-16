@@ -1,0 +1,17 @@
+/* Hero Section */
+.hero {
+  background-color: #b5451b;
+  min-height: 90vh;
+  padding: 40px 20px;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+/* General body font */
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
