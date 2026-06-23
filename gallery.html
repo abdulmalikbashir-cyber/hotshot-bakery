@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hot Shot Bakery - Gallery</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">🔥 Hot Shot Bakery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-warning text-dark text-center py-5">
+    <h1 class="fw-bold">Our Gallery</h1>
+    <p class="lead">A look at what comes out of our oven every day</p>
+  </section>
+
+  <section class="container my-5">
+
+    <div class="text-center mb-4">
+      <button class="btn btn-dark me-2 filter-btn active" data-filter="all">All</button>
+      <button class="btn btn-outline-dark me-2 filter-btn" data-filter="bread">Breads</button>
+      <button class="btn btn-outline-dark me-2 filter-btn" data-filter="pastry">Pastries</button>
+      <button class="btn btn-outline-dark filter-btn" data-filter="cake">Cakes</button>
+    </div>
+
+    <div class="row" id="galleryGrid">
+
+      <div class="col-md-4 mb-4 gallery-item" data-category="bread">
+        <div class="card shadow-sm">
+          <img src="images/bread.jpg" class="card-img-top" alt="Sourdough Bread" style="height:220px; object-fit:cover;"/>
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0">Sourdough Loaf</h6>
+            <small class="text-muted">Breads</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item" data-category="pastry">
+        <div class="card shadow-sm">
+          <img src="images/croissant.jpg" class="card-img-top" alt="Butter Croissant" style="height:220px; object-fit:cover;"/>
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0">Butter Croissant</h6>
+            <small class="text-muted">Pastries</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item" data-category="cake">
+        <div class="card shadow-sm">
+          <img src="images/cake.jpg" class="card-img-top" alt="Chocolate Cake" style="height:220px; object-fit:cover;"/>
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0">Chocolate Fudge Cake</h6>
+            <small class="text-muted">Cakes</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item" data-category="pastry">
+        <div class="card shadow-sm">
+          <img src="images/cinnamon.jpg" class="card-img-top" alt="Cinnamon Roll" style="height:220px; object-fit:cover;"/>
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0">Cinnamon Roll</h6>
+            <small class="text-muted">Pastries</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item" data-category="pastry">
+        <div class="card shadow-sm">
+          <img src="images/pastry.jpg" class="card-img-top" alt="Bakery Pastry" style="height:220px; object-fit:cover;"/>
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0">Cheese Danish</h6>
+            <small class="text-muted">Pastries</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 gallery-item" data-category="cake">
+        <div class="card shadow-sm">
+          <img src="images/birthday.jpg" class="card-img-top" alt="Birthday Cake" style="height:220px; object-fit:cover;"/>
+          <div class="card-body text-center">
+            <h6 class="card-title mb-0">Birthday Cake</h6>
+            <small class="text-muted">Cakes</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2026 Hot Shot Bakery. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+
+        filterButtons.forEach(function(b) {
+          b.classList.remove('active', 'btn-dark');
+          b.classList.add('btn-outline-dark');
+        });
+
+        btn.classList.add('active', 'btn-dark');
+        btn.classList.remove('btn-outline-dark');
+
+        const filter = btn.getAttribute('data-filter');
+
+        galleryItems.forEach(function(item) {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
